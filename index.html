@@ -3,335 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AjudaAí - Frente de Caixa Inteligente</title>
+    <meta name="description" content="Sistema PDV e Frente de Caixa para restaurantes, bares e lanchonetes. Gestão de mesas, comanda eletrônica e painel de cozinha. Teste grátis o AjudaAí!">
+    <meta name="keywords" content="sistema frente de caixa, pdv restaurante, comanda eletronica, controle de mesas, ajudaaí, automação comercial">
+    
+    <title>AjudaAí | Sistema PDV e Frente de Caixa para Restaurantes</title>
+    
     <style>
         :root {
-            --primary: #d97706; /* Laranja/Bronze institucional */
+            --primary: #d97706;
             --primary-hover: #b45309;
             --dark: #1f2937;
             --light: #f9fafb;
             --text: #4b5563;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
 
-        body {
-            background-color: var(--light);
-            color: var(--text);
-            line-height: 1.6;
-        }
+        body { background-color: var(--light); color: var(--text); line-height: 1.6; overflow-x: hidden; }
 
-        header {
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
+        /* Header Ajustado para Mobile */
+        header { background-color: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: fixed; width: 100%; top: 0; z-index: 1000; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
+        .logo { font-size: 1.3rem; font-weight: bold; color: var(--dark); }
+        .logo span { color: var(--primary); }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-        }
+        .btn-download { background-color: var(--primary); color: white; padding: 0.6rem 1.2rem; border-radius: 5px; text-decoration: none; font-weight: 600; transition: background 0.3s; }
+        .btn-download:hover { background-color: var(--primary-hover); }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--dark);
-        }
+        /* Hero Section */
+        .hero { margin-top: 60px; height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; padding: 0 1rem; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), #1f2937; }
+        .hero-content h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1rem; }
+        .hero-content p { font-size: clamp(1rem, 2vw, 1.3rem); max-width: 800px; margin: 0 auto 2rem auto; color: #e5e7eb; }
 
-        .logo span {
-            color: var(--primary);
-        }
+        /* Features */
+        .features { padding: 4rem 1rem; }
+        .features-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+        .feature-card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 4px solid var(--primary); }
+        .feature-card h3 { color: var(--dark); margin-bottom: 1rem; }
+        .feature-card ul { list-style: none; text-align: left; }
+        .feature-card ul li { margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative; }
+        .feature-card ul li::before { content: "✓"; color: var(--primary); position: absolute; left: 0; font-weight: bold; }
 
-        .btn-download {
-            background-color: var(--primary);
-            color: white;
-            padding: 0.6rem 1.2rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-
-        .btn-download:hover {
-            background-color: var(--primary-hover);
-        }
-
-        /* Hero Section com a Imagem Escolhida */
-        .hero {
-            margin-top: 70px;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('watermarked_img_11327617980063684886.png') no-repeat center center/cover;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding: 0 2rem;
-        }
-
-        .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero-content p {
-            font-size: 1.3rem;
-            max-width: 800px;
-            margin: 0 auto 2rem auto;
-            color: #e5e7eb;
-        }
-
-        .badge-trial {
-            background-color: #10b981;
-            color: white;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            display: inline-block;
-            margin-bottom: 1.5rem;
-            font-weight: bold;
-        }
-
-        /* Seção Sobre */
-        .sobre {
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-            text-align: center;
-        }
-
-        .sobre h2 {
-            font-size: 2.2rem;
-            color: var(--dark);
-            margin-bottom: 1rem;
-        }
-
-        /* Funcionalidades */
-        .features {
-            background-color: white;
-            padding: 5rem 2rem;
-        }
-
-        .features-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: var(--light);
-            padding: 2rem;
-            border-radius: 8px;
-            border-top: 4px solid var(--primary);
-            transition: transform 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature-card h3 {
-            color: var(--dark);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-
-        .feature-card ul {
-            list-style: none;
-            text-align: left;
-        }
-
-        .feature-card ul li {
-            margin-bottom: 0.5rem;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .feature-card ul li::before {
-            content: "✓";
-            color: var(--primary);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
-        /* Seção de Preço */
-        .pricing {
-            padding: 5rem 2rem;
-            text-align: center;
-        }
-
-        .price-box {
-            background: white;
-            max-width: 400px;
-            margin: 2rem auto;
-            padding: 3rem 2rem;
-            border-radius: 10px;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-            border: 2px solid var(--primary);
-        }
-
-        .price-box h3 {
-            font-size: 1.5rem;
-            color: var(--dark);
-        }
-
-        .price {
-            font-size: 3rem;
-            font-weight: bold;
-            color: var(--primary);
-            margin: 1.5rem 0;
-        }
-
-        .price-details {
-            margin-bottom: 2rem;
-            font-size: 0.95rem;
-        }
-
-        footer {
-            background-color: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-        }
-
-        /* Responsividade */
+        /* Mobile Optimization */
         @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2rem; }
-            .hero-content p { font-size: 1.1rem; }
-            .features-grid { grid-template-columns: 1fr; }
+            .nav-container { padding: 1rem; }
+            .logo { font-size: 1rem; }
+            .btn-download { padding: 0.5rem 0.8rem; font-size: 0.9rem; }
+            .hero { height: auto; padding: 4rem 1rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navegação Superior -->
     <header>
         <div class="nav-container">
-            <div class="logo">Ajuda<span>Aí</span> - Sistemas e Soluções</div>
-            <!-- ADICIONE O LINK DO SEU INSTALADOR NO HREF ABAIXO -->
-            <a href="https://drive.google.com/drive/folders/1XUlHfrlffAjQrDc9poumo44Pek4vACAS?usp=sharing" class="btn-download">Baixar Instalador</a>
+            <div class="logo">Ajuda<span>Aí</span></div>
+            <a href="https://drive.google.com/drive/folders/1XUlHfrlffAjQrDc9poumo44Pek4vACAS?usp=sharing" class="btn-download">Baixar Agora</a>
         </div>
     </header>
 
-    <!-- Banner Principal (Hero) -->
     <section class="hero">
         <div class="hero-content">
-            <span class="badge-trial">✨ 14 dias de teste totalmente grátis</span>
-            <h1>Sua Cozinha e Frente de Caixa Sob Controle</h1>
-            <p>O sistema Windows definitivo para Restaurantes, Bares, Lanchonetes e Hotéis. Conecte Salão, Cozinha e Caixa sem depender de internet estável.</p>
-            <!-- ADICIONE O LINK DO SEU INSTALADOR NO HREF ABAIXO -->
-            <a href="https://drive.google.com/drive/folders/1XUlHfrlffAjQrDc9poumo44Pek4vACAS?usp=sharing" class="btn-download" style="font-size: 1.2rem; padding: 1rem 2rem;">Baixar Agora (Instalador MSI/NSIS)</a>
+            <h1>Sistema PDV para Restaurantes e Bares</h1>
+            <p>Gestão completa da mesa ao caixa. Sistema Windows leve, offline e integrado com comanda eletrônica para garçons.</p>
+            <a href="https://drive.google.com/drive/folders/1XUlHfrlffAjQrDc9poumo44Pek4vACAS?usp=sharing" class="btn-download" style="padding: 1rem 2rem;">Testar 14 Dias Grátis</a>
         </div>
     </section>
 
-    <!-- Quem Somos / Destino -->
-    <section class="sobre">
-        <h2>Para quem é o AjudaAí?</h2>
-        <p style="max-width: 600px; margin: 0 auto; font-size: 1.1rem;">Uma solução robusta e ágil desenvolvida especialmente para simplificar a operação de <strong>restaurantes, lanchonetes, bares, hotéis, pousadas e estacionamentos</strong>.</p>
-    </section>
-
-    <!-- Funcionalidades -->
     <section class="features">
         <div class="features-grid">
-            
             <div class="feature-card">
                 <h3>🍽️ Gestão de Mesas</h3>
                 <ul>
-                    <li>Grid interativo com status (livre, aguardando, em uso, limpeza).</li>
-                    <li>Abertura ágil por nome ou telefone do cliente.</li>
-                    <li>Comanda individualizada separada por cliente.</li>
-                    <li>Histórico completo de contas fechadas.</li>
+                    <li>Grid visual de status (Livre/Ocupado).</li>
+                    <li>Abertura rápida de comandas.</li>
+                    <li>Histórico de contas fechadas.</li>
                 </ul>
             </div>
-
             <div class="feature-card">
-                <h3>📱 Atendimento (Garçom)</h3>
+                <h3>📱 Comanda Web</h3>
                 <ul>
-                    <li>Página web responsiva nativa (waiter.html).</li>
-                    <li>Adicionar ou remover itens em tempo real pelo celular.</li>
-                    <li>Visualização clara de pedidos ativos por mesa.</li>
-                    <li>Notificações automáticas vindas da cozinha.</li>
+                    <li>Pedidos direto pelo celular.</li>
+                    <li>Sincronização em tempo real.</li>
+                    <li>Interface responsiva garçom.</li>
                 </ul>
             </div>
-
             <div class="feature-card">
-                <h3>👨‍🍳 Painel da Cozinha</h3>
+                <h3>👨‍🍳 Painel Cozinha</h3>
                 <ul>
-                    <li>Painel dedicado (kitchen.html) em tempo real.</li>
-                    <li>Fluxo intuitivo: aguardando → em preparo → pronto.</li>
-                    <li>Temporizador de urgência visual (amarelo/vermelho).</li>
-                    <li>Notificações sonoras ao finalizar os pratos.</li>
+                    <li>Fluxo de produção visual.</li>
+                    <li>Alertas de urgência KDS.</li>
+                    <li>Notificações sonoras.</li>
                 </ul>
             </div>
-
-            <div class="feature-card">
-                <h3>💰 Fechamento de Conta</h3>
-                <ul>
-                    <li>Múltiplas formas: dinheiro, débito, crédito e PIX.</li>
-                    <li>Split (divisão) de conta facilitado entre clientes.</li>
-                    <li>Descontos por valor/percentual com senha de gerente.</li>
-                    <li>Taxa de serviço, couvert e cálculo automático de troco.</li>
-                </ul>
-            </div>
-
-            <div class="feature-card">
-                <h3>🏦 Controle de Caixa</h3>
-                <ul>
-                    <li>Abertura rápida com definição de saldo inicial.</li>
-                    <li>Movimentações seguras de suprimento e sangria.</li>
-                    <li>Relatório de fechamento com conferência de saldo.</li>
-                    <li>Acesso ao histórico completo de caixas anteriores.</li>
-                </ul>
-            </div>
-
-            <div class="feature-card">
-                <h3>⚙️ Infraestrutura e Extras</h3>
-                <ul>
-                    <li>Servidor HTTP integrado (não depende de internet local).</li>
-                    <li>Impressão configurada para bobinas térmicas de 80mm.</li>
-                    <li>Backup diário automático dos seus dados locais.</li>
-                    <li>Gestão de equipe com níveis de acesso e comissões.</li>
-                </ul>
-            </div>
-
         </div>
     </section>
 
-    <!-- Preços -->
-    <section class="pricing">
-        <h2>Plano Simples e Transparente</h2>
-        <div class="price-box">
-            <h3>Assinatura Mensal</h3>
-            <div class="price">R$ 49,90<span style="font-size: 1rem; color: var(--text);">/mês</span></div>
-            <div class="price-details">
-                <p>✓ 14 Dias de Teste Grátis</p>
-                <p>✓ Cancelamento a qualquer momento</p>
-                <p>✓ Sem contratos de fidelidade ou multas</p>
-            </div>
-            <!-- ADICIONE O LINK DO SEU INSTALADOR NO HREF ABAIXO -->
-            <a href="https://drive.google.com/drive/folders/1XUlHfrlffAjQrDc9poumo44Pek4vACAS?usp=sharing" class="btn-download" style="display: block;">Começar Teste Grátis</a>
-        </div>
-    </section>
-
-    <!-- Rodapé -->
     <footer>
-        <p>&copy; 2026 AjudaAí - Sistemas e Soluções. Todos os direitos reservados.</p>
-        <p style="font-size: 0.8rem; margin-top: 0.5rem; color: #9ca3af;">Funciona em ambiente Windows (Instalador Nativo) integrado com navegadores móveis.</p>
+        <p>&copy; 2026 AjudaAí - Soluções em Automação Comercial</p>
     </footer>
 
 </body>
