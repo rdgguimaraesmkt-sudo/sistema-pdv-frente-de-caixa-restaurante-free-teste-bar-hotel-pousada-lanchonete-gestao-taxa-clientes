@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: https://rdgguimaraesmkt-sudo.github.io/sistema-pdv-frente-de-caixa-restaurante-free-teste-bar-hotel-pousada-lanchonete-gestao-taxa-clientes/sitemap.xml
