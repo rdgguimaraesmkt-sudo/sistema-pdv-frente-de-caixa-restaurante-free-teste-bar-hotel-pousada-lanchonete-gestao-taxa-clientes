@@ -1,0 +1,2 @@
+# sistema-pdv-frente-de-caixa-restaurante-free-teste-bar-hotel-pousada-lanchonete-gestao-taxa-clientes
+Sistema PDV e Frente de Caixa para restaurante, bar, lanchonete e pousada. Gestão total: controle de mesas, comanda eletrônica web para garçom e painel de cozinha (KDS) em tempo real. Software Windows ágil, offline e com impressão térmica. Multi-pagamentos, split de contas e gestão de caixa cego. Teste grátis a nossa automação comercial hoje mesmo!
