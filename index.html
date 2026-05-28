@@ -8,68 +8,168 @@
     <link rel="canonical" href="https://rdgguimaraesmkt-sudo.github.io/sistema-pdv-frente-de-caixa-restaurante-free-teste-bar-hotel-pousada-lanchonete-gestao-taxa-clientes/" />
     <title>AjudaAí | Sistema PDV e Frente de Caixa para Restaurantes</title>
     <style>
-        :root { --primary: #d97706; --primary-hover: #b45309; --dark: #1f2937; --light: #f9fafb; --text: #4b5563; }
+        :root { --primary: #d97706; --primary-hover: #b45309; --dark: #1f2937; --light: #f9fafb; --text: #4b5563; --whatsapp: #25D366; --whatsapp-hover: #128C7E; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
         body { background-color: var(--light); color: var(--text); line-height: 1.6; }
         header { background-color: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: fixed; width: 100%; top: 0; z-index: 1000; }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; flex-wrap: wrap; }
         .logo { font-size: 1.5rem; font-weight: bold; color: var(--dark); }
         .logo span { color: var(--primary); }
-        .btn-download { background-color: var(--primary); color: white; padding: 0.6rem 1.2rem; border-radius: 5px; text-decoration: none; font-weight: 600; transition: background 0.3s; }
-        .hero { margin-top: 70px; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), #1f2937; height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; padding: 0 2rem; }
-        .hero-content h1 { font-size: 3rem; margin-bottom: 1rem; }
-        .hero-content p { font-size: 1.3rem; max-width: 800px; margin: 0 auto 2rem auto; color: #e5e7eb; }
+        
+        /* Botões */
+        .btn-download, .btn-whatsapp, .btn-submit { color: white; padding: 0.8rem 1.5rem; border-radius: 5px; text-decoration: none; font-weight: 600; transition: background 0.3s; display: inline-block; border: none; cursor: pointer; text-align: center; }
+        .btn-download, .btn-submit { background-color: var(--primary); }
+        .btn-download:hover, .btn-submit:hover { background-color: var(--primary-hover); }
+        .btn-whatsapp { background-color: var(--whatsapp); font-size: 1.1rem; display: inline-flex; align-items: center; gap: 10px; margin-top: 1rem; }
+        .btn-whatsapp:hover { background-color: var(--whatsapp-hover); }
+
+        /* Estrutura das Seções */
+        section { padding: 5rem 2rem; }
+        .section-title { text-align: center; color: var(--dark); font-size: 2rem; margin-bottom: 3rem; }
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        /* Hero */
+        .hero { margin-top: 70px; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), #1f2937; min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; }
+        .hero-content h1 { font-size: 3rem; margin-bottom: 1rem; line-height: 1.2; }
+        .hero-content p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 2rem auto; color: #e5e7eb; }
         .badge-trial { background-color: #10b981; color: white; padding: 0.4rem 1rem; border-radius: 20px; display: inline-block; margin-bottom: 1.5rem; font-weight: bold; }
-        .features { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .feature-card { background: white; padding: 2rem; border-radius: 8px; border-top: 4px solid var(--primary); box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        
+        /* Funcionalidades */
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .feature-card { background: white; padding: 2.5rem; border-radius: 8px; border-top: 4px solid var(--primary); box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
         .feature-card h3 { color: var(--dark); margin-bottom: 1rem; font-size: 1.4rem; }
         .feature-card ul { list-style: none; text-align: left; }
-        .feature-card ul li { margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative; }
+        .feature-card ul li { margin-bottom: 0.8rem; padding-left: 1.8rem; position: relative; }
         .feature-card ul li::before { content: "✓"; color: var(--primary); position: absolute; left: 0; font-weight: bold; }
-        .pricing { padding: 5rem 2rem; text-align: center; }
-        .price-box { background: white; max-width: 400px; margin: 2rem auto; padding: 3rem 2rem; border-radius: 10px; border: 2px solid var(--primary); }
-        .price { font-size: 3rem; font-weight: bold; color: var(--primary); margin: 1.5rem 0; }
-        footer { background-color: var(--dark); color: white; text-align: center; padding: 2rem; }
-        @media (max-width: 768px) { .hero-content h1 { font-size: 2rem; } .features-grid { grid-template-columns: 1fr; } }
+        
+        /* Ativação e Suporte */
+        .activation-box { background-color: white; border-radius: 10px; padding: 3rem; text-align: center; border: 2px dashed var(--primary); margin: 0 auto; max-width: 800px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+        .activation-box h3 { color: var(--dark); font-size: 1.8rem; margin-bottom: 1rem; }
+        .activation-box p { font-size: 1.1rem; margin-bottom: 1.5rem; }
+
+        /* FAQ */
+        .faq-grid { display: grid; gap: 1.5rem; max-width: 800px; margin: 0 auto; }
+        .faq-item { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .faq-item h4 { color: var(--dark); font-size: 1.2rem; margin-bottom: 0.5rem; }
+
+        /* Contato */
+        .contact-container { max-width: 600px; margin: 0 auto; background: white; padding: 3rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: bold; color: var(--dark); }
+        .form-group input, .form-group textarea { width: 100%; padding: 0.8rem; border: 1px solid #d1d5db; border-radius: 5px; font-size: 1rem; }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+
+        /* Rodapé */
+        footer { background-color: var(--dark); color: #9ca3af; text-align: center; padding: 3rem 2rem; }
+        .footer-links { margin-bottom: 1.5rem; }
+        .footer-links a { color: white; text-decoration: none; margin: 0 1rem; font-weight: 500; }
+        .footer-links a:hover { color: var(--primary); }
+
+        @media (max-width: 768px) { .hero-content h1 { font-size: 2.2rem; } section { padding: 3rem 1rem; } }
     </style>
 </head>
 <body>
     <header>
-        <div class="nav-container">
+        <nav class="nav-container" aria-label="Navegação principal">
             <div class="logo">Ajuda<span>Aí</span> - Sistemas e Soluções</div>
-            <a href="https://drive.google.com/drive/folders/1XUlHfrlffAjQrDc9poumo44Pek4vACAS?usp=sharing" class="btn-download">Baixar Instalador</a>
-        </div>
+            <a href="https://drive.google.com/drive/folders/1XUlHfrlffAjQrDc9poumo44Pek4vACAS?usp=sharing" class="btn-download" aria-label="Baixar o instalador do sistema AjudaAí">Baixar Instalador</a>
+        </nav>
     </header>
-    <section class="hero">
-        <div class="hero-content">
-            <span class="badge-trial">✨ 14 dias de teste totalmente grátis</span>
-            <h1>Sua Cozinha e Frente de Caixa Sob Controle</h1>
-            <p>O sistema Windows definitivo para Restaurantes, Bares, Lanchonetes e Hotéis. Conecte Salão, Cozinha e Caixa sem depender de internet externa.</p>
-            <a href="https://drive.google.com/drive/folders/1XUlHfrlffAjQrDc9poumo44Pek4vACAS?usp=sharing" class="btn-download" style="font-size: 1.2rem; padding: 1rem 2rem;">Baixar Agora</a>
-        </div>
-    </section>
-    <section class="features">
-        <div class="features-grid">
-            <div class="feature-card"> <h3>🍽️ Gestão de Mesas</h3> <ul><li>Grid interativo (Livre, Aguardando, Em Uso).</li><li>Abertura ágil por nome ou telefone.</li><li>Comanda individualizada.</li><li>Histórico completo de contas.</li></ul> </div>
-            <div class="feature-card"> <h3>📱 Atendimento (Garçom)</h3> <ul><li>Página web responsiva nativa (waiter.html).</li><li>Pedidos em tempo real pelo celular.</li><li>Notificações automáticas da cozinha.</li></ul> </div>
-            <div class="feature-card"> <h3>👨‍🍳 Painel da Cozinha (KDS)</h3> <ul><li>Painel dedicado (kitchen.html).</li><li>Fluxo: Aguardando ➔ Em Preparo ➔ Pronto.</li><li>Alertas visuais de urgência.</li><li>Notificações sonoras.</li></ul> </div>
-            <div class="feature-card"> <h3>💰 Fechamento de Conta</h3> <ul><li>PIX, Crédito, Débito e Dinheiro.</li><li>Cálculo de troco e taxas (10%/couvert).</li><li>Split (divisão) de conta facilitado.</li><li>Descontos protegidos por senha.</li></ul> </div>
-            <div class="feature-card"> <h3>🏦 Controle de Caixa</h3> <ul><li>Abertura com saldo inicial.</li><li>Sangria e suprimentos.</li><li>Relatórios gerenciais completos.</li><li>Histórico de caixas anteriores.</li></ul> </div>
-            <div class="feature-card"> <h3>⚙️ Infraestrutura</h3> <ul><li>Servidor HTTP integrado.</li><li>Impressão térmica 80mm.</li><li>Backup diário automático.</li><li>Gestão de equipe e comissões.</li></ul> </div>
-        </div>
-    </section>
-    <section class="pricing">
-        <h2>Plano Simples e Transparente</h2>
-        <div class="price-box">
-            <h3>Assinatura Mensal</h3>
-            <div class="price">R$ 49,90</div>
-            <p>✓ 14 Dias de Teste Grátis | Sem fidelidade</p>
-            <br><a href="https://drive.google.com/drive/folders/1XUlHfrlffAjQrDc9poumo44Pek4vACAS?usp=sharing" class="btn-download" style="display: block;">Começar Teste Grátis</a>
-        </div>
-    </section>
+
+    <main>
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <span class="badge-trial">✨ 14 dias de teste totalmente grátis</span>
+                <h1 id="hero-title">Sua Cozinha e Frente de Caixa Sob Controle</h1>
+                <p>O sistema Windows definitivo para Restaurantes, Bares, Lanchonetes e Hotéis. Conecte Salão, Cozinha e Caixa sem depender de internet externa.</p>
+                <a href="#ativacao" class="btn-download" style="font-size: 1.2rem; padding: 1rem 2rem;" aria-label="Saiba como iniciar sua assinatura">Como Iniciar sua Assinatura</a>
+            </div>
+        </section>
+
+        <section class="features" aria-labelledby="features-title">
+            <div class="container">
+                <h2 id="features-title" class="section-title">Tudo o que seu negócio precisa</h2>
+                <div class="features-grid">
+                    <article class="feature-card"> <h3>🍽️ Gestão de Mesas</h3> <ul><li>Grid interativo (Livre, Aguardando, Em Uso).</li><li>Abertura ágil por nome ou telefone.</li><li>Comanda individualizada.</li><li>Histórico completo de contas.</li></ul> </article>
+                    <article class="feature-card"> <h3>📱 Atendimento (Garçom)</h3> <ul><li>Página web responsiva nativa (waiter.html).</li><li>Pedidos em tempo real pelo celular.</li><li>Notificações automáticas da cozinha.</li></ul> </article>
+                    <article class="feature-card"> <h3>👨‍🍳 Painel da Cozinha (KDS)</h3> <ul><li>Painel dedicado (kitchen.html).</li><li>Fluxo: Aguardando ➔ Em Preparo ➔ Pronto.</li><li>Alertas visuais de urgência.</li><li>Notificações sonoras.</li></ul> </article>
+                    <article class="feature-card"> <h3>💰 Fechamento de Conta</h3> <ul><li>PIX, Crédito, Débito e Dinheiro.</li><li>Cálculo de troco e taxas (10%/couvert).</li><li>Split (divisão) de conta facilitado.</li><li>Descontos protegidos por senha.</li></ul> </article>
+                    <article class="feature-card"> <h3>🏦 Controle de Caixa</h3> <ul><li>Abertura com saldo inicial.</li><li>Sangria e suprimentos.</li><li>Relatórios gerenciais completos.</li><li>Histórico de caixas anteriores.</li></ul> </article>
+                    <article class="feature-card"> <h3>⚙️ Infraestrutura</h3> <ul><li>Servidor HTTP integrado offline.</li><li>Impressão térmica 80mm.</li><li>Backup diário automático.</li><li>Gestão de equipe e comissões.</li></ul> </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="ativacao" style="background-color: var(--light);" aria-labelledby="activation-title">
+            <div class="container">
+                <div class="activation-box">
+                    <h2 id="activation-title">Implantação Segura e Guiada</h2>
+                    <p>O AjudaAí é um sistema robusto e profissional. Para garantir que ele funcione perfeitamente no seu ambiente, a configuração do servidor, o banco de dados e a <strong>criação da sua conta e credenciais são feitas sob minha supervisão direta</strong>.</p>
+                    <p>Você baixa o instalador, entra em contato comigo e eu faço a implantação na sua máquina remotamente, de forma rápida e segura, utilizando o <strong>AnyDesk</strong>.</p>
+                    <a href="https://wa.me/5524998746243?text=Ol%C3%A1!%20Gostaria%20de%20ativar%20meu%20teste%20de%2014%20dias%20do%20sistema%20AjudaA%C3%AD." target="_blank" rel="noopener noreferrer" class="btn-whatsapp" aria-label="Entrar em contato via WhatsApp">
+                        📱 Chamar no WhatsApp (24) 99874-6243
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section aria-labelledby="faq-title">
+            <div class="container">
+                <h2 id="faq-title" class="section-title">Perguntas Frequentes (FAQ)</h2>
+                <div class="faq-grid">
+                    <article class="faq-item">
+                        <h4>O sistema precisa de internet para funcionar?</h4>
+                        <p>Não. O AjudaAí possui um servidor HTTP embutido que funciona em rede local (offline). Você só precisa que o computador central (Caixa) e os celulares dos garçons estejam conectados ao mesmo roteador Wi-Fi do seu estabelecimento.</p>
+                    </article>
+                    <article class="faq-item">
+                        <h4>Como os garçons fazem os pedidos?</h4>
+                        <p>O sistema gera uma página web local (waiter.html). Os garçons acessam um endereço IP direto pelo navegador dos seus próprios celulares, sem precisar baixar nenhum aplicativo nas lojas.</p>
+                    </article>
+                    <article class="faq-item">
+                        <h4>Consigo criar minha conta sozinho após baixar?</h4>
+                        <p>Não. Prezamos pela segurança e estabilidade da sua operação. A ativação inicial, configuração do banco de dados e criação de administrador exigem meu suporte via AnyDesk para garantir que nada dê errado no seu dia a dia.</p>
+                    </article>
+                    <article class="faq-item">
+                        <h4>Qual o valor após os 14 dias de teste?</h4>
+                        <p>O sistema possui um plano simples e transparente: apenas R$ 49,90 por mês. Sem multas, sem fidelidade e com suporte técnico incluso.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section style="background-color: var(--light);" aria-labelledby="contact-title">
+            <div class="container">
+                <h2 id="contact-title" class="section-title">Precisa de mais informações? Fale conosco</h2>
+                <div class="contact-container">
+                    <form action="mailto:nao.responda.ajudaai@gmail.com" method="POST" enctype="text/plain">
+                        <div class="form-group">
+                            <label for="nome">Seu Nome / Nome do Estabelecimento:</label>
+                            <input type="text" id="nome" name="Nome" required aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="assunto">Assunto:</label>
+                            <input type="text" id="assunto" name="Assunto" required aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="mensagem">Como podemos ajudar?</label>
+                            <textarea id="mensagem" name="Mensagem" required aria-required="true"></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit" aria-label="Enviar mensagem de email">Enviar E-mail</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer>
-        <p>&copy; 2026 AjudaAí - Sistemas e Soluções. Funciona em ambiente Windows.</p>
+        <div class="container">
+            <div class="footer-links" aria-label="Links úteis do rodapé">
+                <a href="#ativacao">Suporte Técnico</a>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Termos de Uso</a>
+            </div>
+            <p>&copy; 2026 AjudaAí - Sistemas e Soluções. Solução nativa para ambiente Windows.</p>
+        </div>
     </footer>
 </body>
 </html>
