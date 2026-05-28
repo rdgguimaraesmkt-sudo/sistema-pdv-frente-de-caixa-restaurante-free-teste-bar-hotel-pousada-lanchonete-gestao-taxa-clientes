@@ -53,11 +53,8 @@
         .faq-item h4 { color: var(--dark); font-size: 1.2rem; margin-bottom: 0.5rem; }
 
         /* Contato */
-        .contact-container { max-width: 600px; margin: 0 auto; background: white; padding: 3rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .form-group { margin-bottom: 1.5rem; }
-        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: bold; color: var(--dark); }
-        .form-group input, .form-group textarea { width: 100%; padding: 0.8rem; border: 1px solid #d1d5db; border-radius: 5px; font-size: 1rem; }
-        .form-group textarea { resize: vertical; min-height: 120px; }
+        .contact-container { max-width: 600px; margin: 0 auto; background: white; padding: 3rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: center; }
+        .contact-container p { margin-bottom: 1.5rem; font-size: 1.1rem; }
 
         /* Rodapé */
         footer { background-color: var(--dark); color: #9ca3af; text-align: center; padding: 3rem 2rem; }
@@ -65,7 +62,7 @@
         .footer-links a { color: white; text-decoration: none; margin: 0 1rem; font-weight: 500; }
         .footer-links a:hover { color: var(--primary); }
 
-        @media (max-width: 768px) { .hero-content h1 { font-size: 2.2rem; } section { padding: 3rem 1rem; } }
+        @media (max-width: 768px) { .hero-content h1 { font-size: 22rem; } section { padding: 3rem 1rem; } }
     </style>
 </head>
 <body>
@@ -77,6 +74,7 @@
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section class="hero" aria-labelledby="hero-title">
             <div class="hero-content">
                 <span class="badge-trial">✨ 14 dias de teste totalmente grátis</span>
@@ -86,6 +84,7 @@
             </div>
         </section>
 
+        <!-- Funcionalidades -->
         <section class="features" aria-labelledby="features-title">
             <div class="container">
                 <h2 id="features-title" class="section-title">Tudo o que seu negócio precisa</h2>
@@ -100,6 +99,7 @@
             </div>
         </section>
 
+        <!-- Ativação e Suporte -->
         <section id="ativacao" style="background-color: var(--light);" aria-labelledby="activation-title">
             <div class="container">
                 <div class="activation-box">
@@ -113,6 +113,7 @@
             </div>
         </section>
 
+        <!-- Perguntas Frequentes FAQ -->
         <section aria-labelledby="faq-title">
             <div class="container">
                 <h2 id="faq-title" class="section-title">Perguntas Frequentes (FAQ)</h2>
@@ -127,7 +128,7 @@
                     </article>
                     <article class="faq-item">
                         <h4>Consigo criar minha conta sozinho após baixar?</h4>
-                        <p>Não. Prezamos pela segurança e estabilidade da sua operação. A ativação inicial, configuração do banco de dados e criação de administrador exigem meu suporte via AnyDesk para garantir que nada dê errado no seu dia a dia.</p>
+                        <p>Não. Prezamos pela segurança e estabilidade da sua operação. A ativação inicial, configuração do banco de dados e criação de administrador exigem meu suporte via AnyDesk para garantir que nada deu errado no seu dia a dia.</p>
                     </article>
                     <article class="faq-item">
                         <h4>Qual o valor após os 14 dias de teste?</h4>
@@ -137,30 +138,22 @@
             </div>
         </section>
 
+        <!-- Contato (CORRIGIDO E SEGURO) -->
         <section style="background-color: var(--light);" aria-labelledby="contact-title">
             <div class="container">
-                <h2 id="contact-title" class="section-title">Precisa de mais informações? Fale conosco</h2>
+                <h2 id="contact-title" class="section-title">Prefere o atendimento por E-mail?</h2>
                 <div class="contact-container">
-                    <form action="mailto:nao.responda.ajudaai@gmail.com" method="POST" enctype="text/plain">
-                        <div class="form-group">
-                            <label for="nome">Seu Nome / Nome do Estabelecimento:</label>
-                            <input type="text" id="nome" name="Nome" required aria-required="true">
-                        </div>
-                        <div class="form-group">
-                            <label for="assunto">Assunto:</label>
-                            <input type="text" id="assunto" name="Assunto" required aria-required="true">
-                        </div>
-                        <div class="form-group">
-                            <label for="mensagem">Como podemos ajudar?</label>
-                            <textarea id="mensagem" name="Mensagem" required aria-required="true"></textarea>
-                        </div>
-                        <button type="submit" class="btn-submit" aria-label="Enviar mensagem de email">Enviar E-mail</button>
-                    </form>
+                    <p>Caso não queira utilizar o WhatsApp agora, você pode nos enviar um e-mail direto. Clique no botão abaixo para abrir seu aplicativo de mensagens de forma 100% segura.</p>
+                    <a href="mailto:nao.responda.ajudaai@gmail.com?subject=Suporte%20e%20Ativa%C3%A7%C3%A3o%20-%20Sistema%20AjudaA%C3%AD" class="btn-submit" aria-label="Enviar um e-mail para AjudaAí">
+                        ✉️ Enviar E-mail para Suporte
+                    </a>
+                    <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #9ca3af;">Endereço oficial: nao.responda.ajudaai@gmail.com</p>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Rodapé Expandido -->
     <footer>
         <div class="container">
             <div class="footer-links" aria-label="Links úteis do rodapé">
